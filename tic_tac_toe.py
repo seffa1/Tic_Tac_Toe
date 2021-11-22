@@ -135,8 +135,11 @@ class Player:
 
     def win_match(self):
         self.score += 1
+        Board.show_board()
+        input = ('press enter to continue')
 
 def get_player_choice(chosen_player):
+
     if chosen_player.symbol == 'X':
         symbol = 'X'
     else:
@@ -150,11 +153,27 @@ def get_player_choice(chosen_player):
 
     Board.show_board()
 
-    a = int(input("Select number of space to choose"))
+    try:
+
+        print("Select number of space to choose")
+        a = int(input('--->'))
+
+    except ValueError:
+        print('You must enter a number')
+        get_player_choice(chosen_player)
+
+
 
     # Need to be able to handle user entering a string
     while a not in choices:
-        a = int(input("Select number of space to choose"))
+        try:
+
+            print("Select number of space to choose")
+            a = int(input('--->'))
+
+        except ValueError:
+            print('You must enter a number')
+            get_player_choice(chosen_player)
 
 
     if a == 1:
