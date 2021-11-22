@@ -153,17 +153,6 @@ def get_player_choice(chosen_player):
 
     Board.show_board()
 
-    # try:
-    #     print("Select number of space to choose")
-    #     a = int(input('--->'))
-    #
-    # except ValueError:
-    #     print('You must enter a number')
-    #     get_player_choice(chosen_player)
-    #
-    # else:
-    #     print(f'a: {a}, type: {type(a)}')
-    #     input("press enter to continue")
 
     a = ''
 
@@ -175,7 +164,6 @@ def get_player_choice(chosen_player):
 
         except ValueError:
             print('You must enter a number')
-
 
         else:
             print(f'a: {a}, type: {type(a)}')
@@ -210,14 +198,6 @@ def get_player_choice(chosen_player):
         Board.update(2, 2, symbol)
 
     Board.show_board()
-
-
-
-
-
-
-
-
 
 
 def main():
