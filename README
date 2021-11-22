@@ -1,0 +1,2 @@
+This is a simple Tic Tac Tow game between two local players. You can play mulitble games and it will keep a running total until you quit.
+I came up with an algorithm to check if a player has won or if there is a draw. I am sure there is a more elegant way to do it but it is pretty quick.
