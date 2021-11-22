@@ -1,5 +1,5 @@
 import os
-
+#TEST
 # IDEA FOR SUPER FAST ALGORITHM:
 # Start the game by generated every possible tic tac two board state: 3 ** 9 board states
 # Add each board state to a dictionary with value as either win or lose
