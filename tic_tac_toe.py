@@ -153,27 +153,33 @@ def get_player_choice(chosen_player):
 
     Board.show_board()
 
-    try:
+    # try:
+    #     print("Select number of space to choose")
+    #     a = int(input('--->'))
+    #
+    # except ValueError:
+    #     print('You must enter a number')
+    #     get_player_choice(chosen_player)
+    #
+    # else:
+    #     print(f'a: {a}, type: {type(a)}')
+    #     input("press enter to continue")
 
-        print("Select number of space to choose")
-        a = int(input('--->'))
-
-    except ValueError:
-        print('You must enter a number')
-        get_player_choice(chosen_player)
-
-
+    a = ''
 
     # Need to be able to handle user entering a string
     while a not in choices:
         try:
-
-            print("Select number of space to choose")
+            print("Select number of open space to choose")
             a = int(input('--->'))
 
         except ValueError:
             print('You must enter a number')
-            get_player_choice(chosen_player)
+
+
+        else:
+            print(f'a: {a}, type: {type(a)}')
+            input("press enter to continue")
 
 
     if a == 1:
@@ -234,10 +240,11 @@ def main():
 
     # Game Loop
     keep_playing = True
+    match_count = 0
 
     while keep_playing:
         Board.reset_board()
-        match_count = 0
+
 
         # Each game the other player gets to start the game
         if match_count % 2 == 0:
@@ -248,8 +255,8 @@ def main():
         current_mover = first_mover
         clear()
         print(f'Match Count: {match_count}')
-        print(f'Player 1 wins: {player1.score}')
-        print(f'Player 2 wins: {player2.score}\n')
+        print(f'{player1.name.capitalize()} wins: {player1.score}')
+        print(f'{player2.name.capitalize()} wins: {player2.score}\n')
         print('------------------\n')
         choices = ['1', '2']
         print('Choose a number')
